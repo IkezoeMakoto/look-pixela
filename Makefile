@@ -12,3 +12,7 @@ down:
 
 clean:
 	docker-compose system prune
+
+deploy/prod:
+	git pull origin master
+	docker-compose -f docker-compose.yml -f docker-compose.prod.yml up -d
