@@ -11,7 +11,20 @@ $user = $uris[3] ?? null;
 $graph = $uris[5] ?? null;
 
 $title = $user . 'の' . $graph . 'グラフ';
+// pngの時
+if (pathinfo($uri, PATHINFO_EXTENSION) === 'png') {
+    $uris[5] = pathinfo($uri, PATHINFO_FILENAME);
+    $originalUrl = $pixelaUrl . implode('/', $uris);
+    $result = '<?xml version="1.0" encoding="UTF-8"?>'.file_get_contents($originalUrl);
 
+    $imagick = new Imagick();
+    $svg = $result;
+    $imagick->readImageBlob($svg);
+    $imagick->setImageFormat("png24");
+    header("Content-Type: image/png");
+    echo $imagick;
+    return ;
+}
 ?>
 <html lang="ja">
 <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
