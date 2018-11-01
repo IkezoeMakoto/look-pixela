@@ -36,7 +36,7 @@ if (pathinfo($uri, PATHINFO_EXTENSION) === 'jpg') {
     <meta itemprop="image" content="<?php echo $ogpImageUrl; ?>">
 
     <meta property="og:title" content="<?php echo $title; ?>">
-    <meta property="og:type" content="graph">
+    <meta property="og:type" content="article">
     <meta property="og:image" content="<?php echo $ogpImageUrl; ?>">
     <meta property="og:description" content="<?php echo $title; ?>">
     <meta property="og:site_name" content="<?php echo $title; ?>">
