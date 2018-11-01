@@ -1,6 +1,6 @@
 version: "3"
 services:
-  web:
+  php:
     restart: always
     environment:
       VIRTUAL_HOST: ${HOST_NAME}
@@ -12,3 +12,4 @@ networks:
   default:
     external:
       name: ${NETWORK_NAME}
+

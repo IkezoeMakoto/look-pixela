@@ -6,5 +6,10 @@ RUN apt-get update && \
 # rewrite module 有効化
 RUN a2enmod rewrite auth_basic setenvif
 
+# imagick
+RUN apt-get update && apt-get install -y \
+        libmagickwand-dev --no-install-recommends
+RUN pecl install imagick && docker-php-ext-enable imagick
+
 COPY ./conf /etc/apache2/sites-enabled
 COPY ./src /var/www/html
