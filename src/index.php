@@ -30,7 +30,7 @@ if (pathinfo($uri, PATHINFO_EXTENSION) === 'jpg') {
 }
 ?>
 <html lang="ja">
-<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#">
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
     <meta charset="utf-8">
     <meta itemprop="name" content="<?php echo $title; ?>">
     <meta itemprop="image" content="<?php echo $ogpImageUrl; ?>">

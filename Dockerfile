@@ -11,5 +11,6 @@ RUN apt-get update && apt-get install -y \
         libmagickwand-dev --no-install-recommends
 RUN pecl install imagick && docker-php-ext-enable imagick
 
-COPY ./conf /etc/apache2/sites-enabled
+COPY ./conf/security.conf /etc/apache2/conf-available/security.conf
+COPY ./conf/000-default.conf /etc/apache2/sites-enabled/000-default.conf
 COPY ./src /var/www/html
